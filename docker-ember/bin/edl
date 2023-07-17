@@ -1,0 +1,117 @@
+#!/bin/bash
+# This is the command to use when you would normally run "npm link"
+# eg:
+#     edl (npm link)
+#     edl my-addon  (npm link my-addon)
+#     edl -u (npm unlink)
+
+NODE_M_PATH="${HOME}/.local/lib/node_modules/"
+PACKAGE_FILE="package.json"
+
+# make sure path is available
+mkdir -p $NODE_M_PATH
+
+# supporting function to extract json values
+function jsonval {
+    temp=`echo $json | sed 's/\\\\\//\//g' | sed 's/[{}]//g' | awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}' | sed 's/\"\:\"/\|/g' | sed 's/[\,]/ /g' | sed 's/\"//g' | grep -w $prop | cut -d":" -f2| sed -e 's/^ *//g' -e 's/ *$//g' `
+    echo ${temp##*|}
+}
+
+# check if a string starts with provided value
+function beginswith {
+    case $2 in "$1"*) true;; *) false;; esac;
+}
+
+function package_name {
+    prop=name
+    json=`cat $PACKAGE_FILE`
+    package_name=$(jsonval)
+    echo $package_name
+}
+
+# supporting function to verify we're on the right path
+function verify_path {
+  if [ ! -f $PACKAGE_FILE ]; then
+	   echo "Error: "
+	   echo "  package.json not found, please run in the root directory of your addon"
+	   exit -1
+  fi
+}
+
+function get_scope {
+    package_name=$1
+    if beginswith '@' $package_name;then
+        if [[ "$OSTYPE" == "darwin"* ]]
+        then
+            scope=`echo "$package_name" | sed -E 's/^(@.*\/).*/\1/g'`
+        else
+            scope=`echo "$package_name" | sed -r 's/^(@.*\/).*/\1/g'`
+        fi
+    fi
+    echo $scope
+}
+# supporting function to create symlinks
+function npm_link {
+    link_target="$(pwd)"
+    package_name=$(package_name)
+    scope=`get_scope $package_name`
+    if [[ ! -e $scope ]];then
+        mkdir -p $NODE_M_PATH/$scope
+    fi
+    link_name="$NODE_M_PATH$package_name"
+    if [ -e $link_name ];then
+        unlink $link_name
+    fi
+    ln -s "$link_target" "$link_name"
+    if [ $? == 0 ];then
+        echo "created symlink for '$package_name' in node_modules"
+        echo "you can now add this addon to your project using 'edl $package_name'"
+    fi
+}
+
+# supporting function to create symlinks
+function npm_unlink {
+    package_name=$(package_name)
+    unlink "$NODE_M_PATH$package_name"
+    if [ $? == 0 ];then
+        echo "removed symlink for '$package_name' from node_modules"
+    fi
+}
+
+function npm_link_package {
+    name=$1
+    scope=`get_scope $name`
+    if [[ -L node_modules/$name ]]
+    then
+        echo "removing previously linked module"
+        rm node_modules/$name
+    fi
+    if [ -e node_modules/$name ];then
+        echo "removing installed module"
+        rm -rf node_modules/$name
+    fi
+    mkdir -p node_modules/$scope
+    edi "ln -s /usr/lib/node_modules/$name /app/node_modules/$name"
+}
+
+function show_usage {
+		echo "usage: "
+		echo " edl  (create a symlink to package)"
+		echo " edl [package-name] (use a local symlinked package)"
+		echo " edl -u (remove symlink to current package)"
+		echo " edl -h (this help text)"
+		exit 1;
+}
+if [[ $1 == "-h" ]];then
+	  show_usage
+elif [[ $# -eq 1 && $1 == "-u" ]]; then
+    verify_path && npm_unlink
+elif [[ $# -eq 1 ]];then
+		npm_link_package $1
+elif [[ $# -eq 0 ]];then
+		verify_path && npm_link
+else
+    show_usage
+fi
+
+

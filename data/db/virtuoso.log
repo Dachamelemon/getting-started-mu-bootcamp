@@ -1,0 +1,161 @@
+
+		Wed Jul 12 2023
+13:51:57 OpenLink Virtuoso Universal Server
+13:51:57 Version 07.20.3233-pthreads for Linux as of Nov 24 2021
+13:51:57 uses OpenSSL 1.0.2n  7 Dec 2017
+13:51:57 uses parts of PCRE, Html Tidy
+13:51:57 SQL Optimizer enabled (max 1000 layouts)
+13:51:57 Compiler unit is timed at 0.000185 msec
+13:51:58 Checkpoint started
+13:51:58 Roll forward started
+13:51:58 Roll forward complete
+13:51:58 Checkpoint started
+13:51:58 Checkpoint finished, log reused
+13:51:58 Checkpoint started
+13:51:58 Checkpoint finished, log reused
+13:51:58 Checkpoint started
+13:51:58 Checkpoint finished, log reused
+13:51:58 Checkpoint started
+13:51:58 Checkpoint finished, log reused
+13:51:58 Checkpoint started
+13:51:58 Checkpoint finished, log reused
+13:51:58 PL LOG: Installing Virtuoso Conductor version 1.00.8823 (DAV)
+13:51:58 PL LOG: Installing with dependencies Virtuoso Conductor version 1.00.8823/2021-11-24 14:19 (DAV)
+13:51:58 Checkpoint started
+13:51:58 Checkpoint finished, log reused
+13:52:01 Checkpoint started
+13:52:01 Checkpoint finished, log reused
+13:52:01 PL LOG: Installation with dependencies complete
+13:52:01 Checkpoint started
+13:52:01 Checkpoint finished, log reused
+13:52:01 HTTP/WebDAV server online at 27015
+13:52:01 Server online at 1111 (pid 19)
+13:52:01 Server received signal 15
+13:52:01 Initiating quick shutdown
+13:52:01 Server shutdown complete
+
+		Wed Jul 12 2023
+13:52:01 OpenLink Virtuoso Universal Server
+13:52:01 Version 07.20.3233-pthreads for Linux as of Nov 24 2021
+13:52:01 uses OpenSSL 1.0.2n  7 Dec 2017
+13:52:01 uses parts of PCRE, Html Tidy
+13:52:01 Database version 3126
+13:52:01 SQL Optimizer enabled (max 1000 layouts)
+13:52:02 Compiler unit is timed at 0.000075 msec
+13:52:03 Roll forward started
+13:52:03 Roll forward complete
+13:52:03 Checkpoint started
+13:52:03 Checkpoint finished, log reused
+13:52:03 HTTP/WebDAV server online at 8890
+13:52:03 Server online at 1111 (pid 1)
+14:02:04 ERRS_0 01V01 QW004 Incompatible types VARCHAR (182) and INTEGER (189) in COALESCE for coalesce_ret and <constant>
+14:02:04 ERRS_0 01V01 QW004 Incompatible types VARCHAR (182) and INTEGER (189) in := for coalesce_ret and <constant>
+14:02:04 ERRS_0 01V01 QW004 Incompatible types VARCHAR (182) and INTEGER (189) in COALESCE for coalesce_ret and <constant>
+14:02:04 ERRS_0 01V01 QW004 Incompatible types VARCHAR (182) and INTEGER (189) in := for coalesce_ret and <constant>
+14:52:04 Checkpoint started
+14:52:04 Checkpoint finished, log reused
+15:02:42 ERRS_0 42000 UD021 No user defined class DB.DBA.page_f97a0fe94cf12fd45d8652041b3640e3V_VAD_conductor_main__tabs_vspx
+15:02:42 ERRS_0 01V01 QW001 Local declaration of control shadows a definition of the same name
+15:02:42 ERRS_0 42000 UD021 No user defined class DB.DBA.page_23a9644beceec46b97fd1b95fe9fad7ductor_adm__navigation__bar_vspx
+15:02:42 ERRS_0 01V01 QW008 Invalid = comparison operation argument control type INSTANCE (254)
+15:02:42 ERRS_0 01V01 QW008 Invalid = comparison operation argument control type INSTANCE (254)
+15:02:42 ERRS_0 01V01 QW001 Local declaration of control shadows a definition of the same name
+15:02:42 ERRS_0 01V01 QW001 Local declaration of inx shadows a definition of the same name
+15:03:00 ERRS_0 42000 UD021 No user defined class DB.DBA.page_d190a278c2554ff79e0f0863a59b6c21AD_conductor_sparql__input_vspx
+15:03:00 ERRS_0 01V01 QW001 Local declaration of control shadows a definition of the same name
+15:03:05 ERRS_0 42000 UD021 No user defined class DB.DBA.page_312a733cc91f2d8d3e4373a5090e0b70VAD_conductor_graphs__page_vspx
+15:03:05 ERRS_0 01V01 QW001 Local declaration of params shadows a definition of the same name
+15:03:05 ERRS_0 01V01 QW001 Local declaration of control shadows a definition of the same name
+21:47:04 Checkpoint started
+21:47:04 Checkpoint finished, log reused
+
+		Thu Jul 13 2023
+07:16:36 Checkpoint started
+07:16:36 Checkpoint finished, log reused
+07:28:17 Server received signal 15
+07:28:17 Initiating quick shutdown
+07:28:17 Server shutdown complete
+
+		Mon Jul 17 2023
+09:52:04 OpenLink Virtuoso Universal Server
+09:52:04 Version 07.20.3233-pthreads for Linux as of Nov 24 2021
+09:52:04 uses OpenSSL 1.0.2n  7 Dec 2017
+09:52:04 uses parts of PCRE, Html Tidy
+09:52:04 Database version 3126
+09:52:04 SQL Optimizer enabled (max 1000 layouts)
+09:52:05 Compiler unit is timed at 0.000088 msec
+09:52:05 Roll forward started
+09:52:05 Roll forward complete
+09:52:05 Checkpoint started
+09:52:05 Checkpoint finished, log reused
+09:52:07 HTTP/WebDAV server online at 8890
+09:52:07 Server online at 1111 (pid 1)
+
+		Mon Jul 17 2023
+09:53:52 OpenLink Virtuoso Universal Server
+09:53:52 Version 07.20.3233-pthreads for Linux as of Nov 24 2021
+09:53:52 uses OpenSSL 1.0.2n  7 Dec 2017
+09:53:52 uses parts of PCRE, Html Tidy
+09:53:52 Database version 3126
+09:53:52 SQL Optimizer enabled (max 1000 layouts)
+09:53:53 Compiler unit is timed at 0.000106 msec
+09:53:54 Roll forward started
+09:53:54 Roll forward complete
+09:53:54 Checkpoint started
+09:53:54 Checkpoint finished, log reused
+09:53:56 HTTP/WebDAV server online at 8890
+09:53:56 Server online at 1111 (pid 1)
+09:59:54 Server received signal 15
+09:59:54 Initiating quick shutdown
+09:59:54 Server shutdown complete
+
+		Mon Jul 17 2023
+10:04:05 OpenLink Virtuoso Universal Server
+10:04:05 Version 07.20.3233-pthreads for Linux as of Nov 24 2021
+10:04:05 uses OpenSSL 1.0.2n  7 Dec 2017
+10:04:05 uses parts of PCRE, Html Tidy
+10:04:05 Database version 3126
+10:04:05 SQL Optimizer enabled (max 1000 layouts)
+10:04:06 Compiler unit is timed at 0.000099 msec
+10:04:06 Roll forward started
+10:04:06 Roll forward complete
+10:04:07 Checkpoint started
+10:04:07 Checkpoint finished, log reused
+10:04:07 HTTP/WebDAV server online at 8890
+10:04:07 Server online at 1111 (pid 1)
+10:05:27 Server received signal 15
+10:05:27 Initiating quick shutdown
+10:05:27 Server shutdown complete
+
+		Mon Jul 17 2023
+11:15:23 OpenLink Virtuoso Universal Server
+11:15:23 Version 07.20.3233-pthreads for Linux as of Nov 24 2021
+11:15:23 uses OpenSSL 1.0.2n  7 Dec 2017
+11:15:23 uses parts of PCRE, Html Tidy
+11:15:23 Database version 3126
+11:15:23 SQL Optimizer enabled (max 1000 layouts)
+11:15:24 Compiler unit is timed at 0.000085 msec
+11:15:24 Roll forward started
+11:15:24 Roll forward complete
+11:15:25 Checkpoint started
+11:15:25 Checkpoint finished, log reused
+11:15:27 HTTP/WebDAV server online at 8890
+11:15:27 Server online at 1111 (pid 1)
+11:24:59 Server received signal 15
+11:24:59 Initiating quick shutdown
+11:24:59 Server shutdown complete
+
+		Mon Jul 17 2023
+11:35:46 OpenLink Virtuoso Universal Server
+11:35:46 Version 07.20.3233-pthreads for Linux as of Nov 24 2021
+11:35:46 uses OpenSSL 1.0.2n  7 Dec 2017
+11:35:46 uses parts of PCRE, Html Tidy
+11:35:46 Database version 3126
+11:35:46 SQL Optimizer enabled (max 1000 layouts)
+11:35:47 Compiler unit is timed at 0.000087 msec
+11:35:47 Roll forward started
+11:35:47 Roll forward complete
+11:35:47 Checkpoint started
+11:35:47 Checkpoint finished, log reused
+11:35:47 HTTP/WebDAV server online at 8890
+11:35:47 Server online at 1111 (pid 1)

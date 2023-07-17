@@ -1,0 +1,33 @@
+#!/bin/bash
+# This is the standard command to use when running non-interactive commands
+# eg:
+#   ed ember generate model post
+#   ed npm install
+#   ed bower install
+
+VERSION="@EMBER_VERSION"
+
+if [ -r ~/.config/edi/settings ]
+then
+    . ~/.config/edi/settings
+fi
+
+
+
+@SUPPORT_SCRIPTS
+
+
+
+edi_calculate_docker_image # DOCKER_IMAGE
+edi_calculate_standard_docker_options # STANDARD_DOCKER_OPTIONS
+
+if [ -n "$EDI_USE_EDI_DAEMON" ]
+then
+    edi_start_edi_daemon "$DOCKER_IMAGE" "$STANDARD_DOCKER_OPTIONS" # EDI_DAEMON_CONTAINER_NAME
+
+    # run command
+    echo "Executing command $@ on $EDI_DAEMON_CONTAINER_NAME"
+    docker exec -ti $EDI_DAEMON_CONTAINER_NAME $@
+else
+    eval "docker run --rm $STANDARD_DOCKER_OPTIONS $DOCKER_IMAGE $@"
+fi

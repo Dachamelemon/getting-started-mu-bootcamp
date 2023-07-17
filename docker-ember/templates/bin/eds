@@ -1,0 +1,22 @@
+#!/bin/bash
+# This is the command to use when running interactive commands
+# eg:
+#   edi ember release --minor
+
+VERSION="@EMBER_VERSION"
+
+if [ -r ~/.config/edi/settings ]
+then
+    . ~/.config/edi/settings
+fi
+
+
+
+@SUPPORT_SCRIPTS
+
+
+
+edi_calculate_docker_image # DOCKER_IMAGE
+edi_calculate_standard_docker_options # STANDARD_DOCKER_OPTIONS
+
+eval docker run --rm -it $STANDARD_DOCKER_OPTIONS `edi_docker_server_exposed_ports_option $@` `edi_docker_host_option ` $DOCKER_IMAGE ember serve $@
